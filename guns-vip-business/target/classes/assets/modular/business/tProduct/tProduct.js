@@ -40,7 +40,7 @@ layui.use(['table', 'admin', 'ax'], function () {
             {field: 'productIsShow', sort: true, title: '是否显示'},
             {field: 'productIsPublish', sort: true, title: '是否上架'},
             {field: 'productStatus', sort: true, title: '状态'},
-            {align: 'center', toolbar: '#tableBar', title: '操作'}
+            {align: 'center', toolbar: '#tableBar', title: '操作',minWidth: 280}
         ]];
     };
 
