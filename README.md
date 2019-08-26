@@ -19,7 +19,9 @@
 | 模块名称 | 说明 |
 | :---: | :---: |
 | guns-base | guns的基础模块 | 
+| guns-business | 业务系统管理模块 |
 | guns-sys | guns系统管理的基础业务模块 |
 | guns-vip-gen | guns代码生成器模块 |
 | guns-vip-main | 主启动模块，也是您的业务的编写的地方 |
+
 
