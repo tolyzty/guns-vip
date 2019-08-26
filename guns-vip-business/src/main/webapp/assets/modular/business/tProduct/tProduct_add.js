@@ -87,7 +87,7 @@ layui.use(['form', 'admin', 'ax','upload'], function () {
     $("#keywordKey").tagsInput();
 
 
-    var newImgUrl="";
+    var prodictImgUrl="";
     //普通图片上传
     upload.render({
         elem: '#picBtn'
@@ -100,7 +100,7 @@ layui.use(['form', 'admin', 'ax','upload'], function () {
         , done: function (res) {
             $("#pictureInputHidden").val(res.data.fileId);
             Feng.success(res.message);
-            newImgUrl = res.data.productIcon;
+            prodictImgUrl = res.data.uploadName;
             console.info("地址:"+newImgUrl);
         }
         , error: function () {
@@ -110,6 +110,8 @@ layui.use(['form', 'admin', 'ax','upload'], function () {
 
     //表单提交事件
     form.on('submit(btnSubmit)', function (data) {
+        data.field.productIcon = prodictImgUrl;
+        data.field.productDetail = editor.txt.html();
         var ajax = new $ax(Feng.ctxPath + "/tProduct/addItem", function (data) {
             Feng.success("添加成功！");
             //传给上个页面，刷新table用

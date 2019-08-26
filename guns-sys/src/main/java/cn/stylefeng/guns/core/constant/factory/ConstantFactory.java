@@ -356,6 +356,25 @@ public class ConstantFactory implements IConstantFactory {
         return CommentEnum.commentStatus.getDescription(commentStatus);
     }
 
+    @Override
+    public String getProductType(String productType) {
+        return null;
+    }
+
+    @Override
+    public String getProductClassify(String productClassify) {
+        return null;
+    }
+
+    @Override
+    public String getProductIsShow(String productIsShow) {
+        return null;
+    }
+
+    @Override
+    public String getProductIsPublish(String productIsPublish) {
+        return null;
+    }
 
 
 }

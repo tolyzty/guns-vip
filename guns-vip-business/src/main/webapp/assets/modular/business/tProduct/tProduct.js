@@ -30,20 +30,16 @@ layui.use(['table', 'admin', 'ax'], function () {
             {field: 'productIcon', sort: true, title: '产品图标'},
             {field: 'productRepertory', sort: true, title: '库存'},
             {field: 'productSales', sort: true, title: '销量'},
-            {field: 'productDetail', sort: true, title: '产品详情'},
             {field: 'productDispatch', sort: true, title: '产品配送类型'},
             {field: 'productPayMethod', sort: true, title: '产品支付方式'},
             {field: 'productFeature', sort: true, title: '产品特征'},
             {field: 'productStandard', sort: true, title: '产品规格'},
-            {field: 'productIsShow', sort: true, title: '是否显示'},
             {field: 'productPlace', sort: true, title: '产品产地'},
             {field: 'productShowType', sort: true, title: '产品展示类型'},
             {field: 'productCreateTime', sort: true, title: '创建时间'},
-            {field: 'productUpdateTime', sort: true, title: '修改时间'},
-            {field: 'productRemark', sort: true, title: '备注'},
-            {field: 'productOperator', sort: true, title: '操作人'},
-            {field: 'productStatus', sort: true, title: '状态'},
+            {field: 'productIsShow', sort: true, title: '是否显示'},
             {field: 'productIsPublish', sort: true, title: '是否上架'},
+            {field: 'productStatus', sort: true, title: '状态'},
             {align: 'center', toolbar: '#tableBar', title: '操作'}
         ]];
     };
@@ -101,8 +97,20 @@ layui.use(['table', 'admin', 'ax'], function () {
      * @param data 点击按钮时候的行数据
      */
     TProduct.openEditDlg = function (data) {
-        window.location.href = Feng.ctxPath + '/tProduct/edit?id=' + data.id;
+        admin.putTempData('formOk', false);
+        top.layui.admin.open({
+            type: 2,
+            title: '编辑产品',
+            area: ['55%', '450px'],   //宽高
+            content: Feng.ctxPath + '/tProduct/edit?id=' + data.id,
+            end: function () {
+                admin.getTempData('formOk') && table.reload(TProduct.tableId);
+            }
+        });
     };
+
+
+
 
     /**
      * 点击删除

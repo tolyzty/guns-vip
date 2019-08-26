@@ -175,4 +175,13 @@ public interface IConstantFactory {
      */
     String  getCommentStatus(String commentStatus);
 
+
+    String  getProductType(String productType);
+
+    String  getProductClassify(String productClassify);
+
+    String getProductIsShow(String productIsShow);
+
+    String  getProductIsPublish(String productIsPublish);
+
 }

@@ -1,6 +1,7 @@
 package cn.stylefeng.guns.business.modular.controller;
 
 import cn.stylefeng.guns.base.pojo.page.LayuiPageInfo;
+import cn.stylefeng.guns.business.core.util.TagUtil;
 import cn.stylefeng.guns.business.modular.entity.TProduct;
 import cn.stylefeng.guns.business.modular.model.params.TProductParam;
 import cn.stylefeng.guns.business.modular.service.TProductService;
@@ -115,7 +116,12 @@ public class TProductController extends BaseController {
     @RequestMapping("/detail")
     @ResponseBody
     public ResponseData detail(TProductParam tProductParam) {
+        log.info("查看详情接口参数:{}",tProductParam);
         TProduct detail = this.tProductService.getById(tProductParam.getId());
+        if(!("").equals(detail.getProductDetail())){
+            detail.setProductDetail(TagUtil.getTagHtml(detail.getProductDetail()));
+        }
+        log.info("查看详情结果:{}",detail);
         return ResponseData.success(detail);
     }
 

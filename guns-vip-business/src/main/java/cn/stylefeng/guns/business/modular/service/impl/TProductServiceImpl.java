@@ -7,6 +7,8 @@ import cn.stylefeng.guns.business.modular.mapper.TProductMapper;
 import cn.stylefeng.guns.business.modular.model.params.TProductParam;
 import cn.stylefeng.guns.business.modular.model.result.TProductResult;
 import  cn.stylefeng.guns.business.modular.service.TProductService;
+import cn.stylefeng.guns.business.modular.warpper.NewsWarpper;
+import cn.stylefeng.guns.business.modular.warpper.PorductWarpper;
 import cn.stylefeng.roses.core.util.ToolUtil;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -15,6 +17,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Map;
 
 /**
  * <p>
@@ -59,8 +62,11 @@ public class TProductServiceImpl extends ServiceImpl<TProductMapper, TProduct> i
     @Override
     public LayuiPageInfo findPageBySpec(TProductParam param){
         Page pageContext = getPageContext();
-        IPage page = this.baseMapper.customPageList(pageContext, param);
-        return LayuiPageFactory.createPageInfo(page);
+       /* IPage page = this.baseMapper.customPageList(pageContext, param);*/
+        Page<Map<String, Object>> params = this.baseMapper.customPageMapList(pageContext, param);
+        Page wrapped = new PorductWarpper(params).wrap();
+        return LayuiPageFactory.createPageInfo(wrapped);
+
     }
 
     private Serializable getKey(TProductParam param){

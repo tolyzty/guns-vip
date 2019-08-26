@@ -28,4 +28,9 @@ public class TagUtil {
         }
         return strs;
     }
+
+    public static void main(String[] arge){
+        String rets = "& lt;p& gt;12312312123& lt;/p& gt;";
+        System.out.println(getTagHtml(rets));
+    }
 }
