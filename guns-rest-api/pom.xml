@@ -46,14 +46,6 @@
         <dependency>
             <groupId>cn.stylefeng</groupId>
             <artifactId>guns-sys</artifactId>
-            <version>1.0.0</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>cn.stylefeng</groupId>
-            <artifactId>guns-sys</artifactId>
-            <version>1.0.0</version>
-            <scope>compile</scope>
         </dependency>
 
     </dependencies>
