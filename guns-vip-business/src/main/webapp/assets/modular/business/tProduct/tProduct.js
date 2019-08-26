@@ -53,7 +53,7 @@ layui.use(['table', 'admin', 'ax'], function () {
      */
     TProduct.search = function () {
         var queryData = {};
-        queryData['condition'] = $("#condition").val();
+        queryData['productName'] = $("#productName").val();
         table.reload(TProduct.tableId, {where: queryData});
     };
 

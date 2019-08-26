@@ -6,6 +6,7 @@ import cn.stylefeng.guns.business.modular.model.params.TProductParam;
 import cn.stylefeng.guns.business.modular.service.TProductService;
 import cn.stylefeng.roses.core.base.controller.BaseController;
 import cn.stylefeng.roses.core.reqres.response.ResponseData;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,6 +21,7 @@ import java.util.Date;
  * @author zhangty
  * @Date 2019-08-26 09:10:29
  */
+@Slf4j
 @Controller
 @RequestMapping("/tProduct")
 public class TProductController extends BaseController {
@@ -71,6 +73,7 @@ public class TProductController extends BaseController {
     @RequestMapping("/addItem")
     @ResponseBody
     public ResponseData addItem(TProductParam tProductParam) {
+        log.info("获取产品信息参数:{}",tProductParam);
         tProductParam.setProductCreateTime(new Date());
         this.tProductService.add(tProductParam);
         return ResponseData.success();
