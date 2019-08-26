@@ -22,7 +22,7 @@ import java.util.UUID;
 /**
  * @Auther: zhangty
  * @Date: 2019/8/26 11:49
- * @Description:通用的控制
+ * @Description:通用的控制器
  * @Version:1.0.0
  */
 @Slf4j
