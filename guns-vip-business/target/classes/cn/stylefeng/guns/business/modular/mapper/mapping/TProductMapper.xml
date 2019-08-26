@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.stylefeng.guns.business.modular.mapper.TProductMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.stylefeng.guns.business.modular.entity.TProduct">
+        <id column="ID" property="id" />
+        <result column="PRODUCT_NAME" property="productName" />
+        <result column="PRODUCT_TYPE" property="productType" />
+        <result column="PRODUCT_NUM" property="productNum" />
+        <result column="PRODUCT_CLASSIFY" property="productClassify" />
+        <result column="PRODUCT_SUP_PRICE" property="productSupPrice" />
+        <result column="PRODUCT_MAR_PRICE" property="productMarPrice" />
+        <result column="PRODUCT_PREFER_PRICE" property="productPreferPrice" />
+        <result column="PRODUCT_DIS_PRICE" property="productDisPrice" />
+        <result column="KEYWORD_KEY" property="keywordKey" />
+        <result column="PRODUCT_ICON" property="productIcon" />
+        <result column="PRODUCT_REPERTORY" property="productRepertory" />
+        <result column="PRODUCT_SALES" property="productSales" />
+        <result column="PRODUCT_DETAIL" property="productDetail" />
+        <result column="PRODUCT_DISPATCH" property="productDispatch" />
+        <result column="PRODUCT_PAY_METHOD" property="productPayMethod" />
+        <result column="PRODUCT_FEATURE" property="productFeature" />
+        <result column="PRODUCT_STANDARD" property="productStandard" />
+        <result column="PRODUCT_IS_SHOW" property="productIsShow" />
+        <result column="PRODUCT_PLACE" property="productPlace" />
+        <result column="PRODUCT_SHOW_TYPE" property="productShowType" />
+        <result column="PRODUCT_CREATE_TIME" property="productCreateTime" />
+        <result column="PRODUCT_UPDATE_TIME" property="productUpdateTime" />
+        <result column="PRODUCT_REMARK" property="productRemark" />
+        <result column="PRODUCT_OPERATOR" property="productOperator" />
+        <result column="PRODUCT_STATUS" property="productStatus" />
+        <result column="PRODUCT_IS_PUBLISH" property="productIsPublish" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID AS "id", PRODUCT_NAME AS "productName", PRODUCT_TYPE AS "productType", PRODUCT_NUM AS "productNum", PRODUCT_CLASSIFY AS "productClassify", PRODUCT_SUP_PRICE AS "productSupPrice", PRODUCT_MAR_PRICE AS "productMarPrice", PRODUCT_PREFER_PRICE AS "productPreferPrice", PRODUCT_DIS_PRICE AS "productDisPrice", KEYWORD_KEY AS "keywordKey", PRODUCT_ICON AS "productIcon", PRODUCT_REPERTORY AS "productRepertory", PRODUCT_SALES AS "productSales", PRODUCT_DETAIL AS "productDetail", PRODUCT_DISPATCH AS "productDispatch", PRODUCT_PAY_METHOD AS "productPayMethod", PRODUCT_FEATURE AS "productFeature", PRODUCT_STANDARD AS "productStandard", PRODUCT_IS_SHOW AS "productIsShow", PRODUCT_PLACE AS "productPlace", PRODUCT_SHOW_TYPE AS "productShowType", PRODUCT_CREATE_TIME AS "productCreateTime", PRODUCT_UPDATE_TIME AS "productUpdateTime", PRODUCT_REMARK AS "productRemark", PRODUCT_OPERATOR AS "productOperator", PRODUCT_STATUS AS "productStatus", PRODUCT_IS_PUBLISH AS "productIsPublish"
+    </sql>
+
+
+    <select id="customList" resultType="cn.stylefeng.guns.business.modular.model.result.TProductResult" parameterType="cn.stylefeng.guns.business.modular.model.params.TProductParam">
+        select
+        <include refid="Base_Column_List"/>
+        from T_PRODUCT where 1 = 1
+            <if test="paramCondition.productName != null and paramCondition.productName != ''">
+                and productName like CONCAT('%',#{paramCondition.productName},'%')
+            </if>
+            <if test="paramCondition.productCreateTime != null and paramCondition.productCreateTime != ''">
+                and productCreateTime like CONCAT('%',#{paramCondition.productCreateTime},'%')
+            </if>
+    </select>
+
+    <select id="customMapList" resultType="map" parameterType="cn.stylefeng.guns.business.modular.model.params.TProductParam">
+        select
+        <include refid="Base_Column_List"/>
+        from T_PRODUCT where 1 = 1
+            <if test="paramCondition.productName != null and paramCondition.productName != ''">
+                and productName like CONCAT('%',#{paramCondition.productName},'%')
+            </if>
+            <if test="paramCondition.productCreateTime != null and paramCondition.productCreateTime != ''">
+                and productCreateTime like CONCAT('%',#{paramCondition.productCreateTime},'%')
+            </if>
+    </select>
+
+    <select id="customPageList" resultType="cn.stylefeng.guns.business.modular.model.result.TProductResult" parameterType="cn.stylefeng.guns.business.modular.model.params.TProductParam">
+        select
+        <include refid="Base_Column_List"/>
+        from T_PRODUCT where 1 = 1
+        <if test="paramCondition.productName != null and paramCondition.productName != ''">
+            and productName like CONCAT('%',#{paramCondition.productName},'%')
+        </if>
+        <if test="paramCondition.productCreateTime != null and paramCondition.productCreateTime != ''">
+            and productCreateTime like CONCAT('%',#{paramCondition.productCreateTime},'%')
+        </if>
+    </select>
+
+    <select id="customPageMapList" resultType="map" parameterType="cn.stylefeng.guns.business.modular.model.params.TProductParam">
+        select
+        <include refid="Base_Column_List"/>
+        from T_PRODUCT where 1 = 1
+            <if test="paramCondition.productName != null and paramCondition.productName != ''">
+                and productName like CONCAT('%',#{paramCondition.productName},'%')
+            </if>
+            <if test="paramCondition.productCreateTime != null and paramCondition.productCreateTime != ''">
+                and productCreateTime like CONCAT('%',#{paramCondition.productCreateTime},'%')
+            </if>
+    </select>
+
+</mapper>

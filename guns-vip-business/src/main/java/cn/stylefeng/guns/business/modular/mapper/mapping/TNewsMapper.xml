@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+    <mapper namespace="cn.stylefeng.guns.business.modular.mapper.TNewsMapper">
+
+    <resultMap id="BaseResultMap" type="cn.stylefeng.guns.business.modular.entity.TNews">
+        <id column="NEW_ID" jdbcType="INTEGER" property="newId" />
+        <result property="newTital" column="NEW_TITAL"/>
+        <result property="newContent" column="NEW_CONTENT"/>
+        <result property="newAbstracts" column="NEW_ABSTRACTS"/>
+        <result property="newType" column="NEW_TYPE"/>
+        <result property="newCollection" column="NEW_COLLECTION"/>
+        <result property="newAuthor" column="NEW_AUTHOR"/>
+        <result property="newBrowse" column="NEW_BROWSE"/>
+        <result property="newComment" column="NEW_COMMENT"/>
+        <result property="newImgUrl" column="NEW_IMG_URL"/>
+        <result property="newIsDisplay" column="NEW_IS_DISPLAY"/>
+        <result property="newStatus" column="NEW_STATUS"/>
+        <result property="newTags" column="NEW_TAGS"/>
+        <result property="newKeyword" column="NEW_KEYWORD"/>
+        <result property="newRecomm" column="NEW_RECOMM"/>
+        <result property="newTop" column="NEW_TOP"/>
+        <result property="newCrtTime" column="NEW_CRT_TIME"/>
+        <result property="newUptTime" column="NEW_UPT_TIME"/>
+        <result property="operator" column="OPERATOR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        NEW_ID AS newId,
+        NEW_TITAL as newTital,
+        NEW_CONTENT as newContent,
+        NEW_ABSTRACTS as newAbstracts,
+        NEW_TYPE as newType,
+        NEW_COLLECTION as newCollection,
+        NEW_AUTHOR as newAuthor,
+        NEW_BROWSE as newBrowse,
+        NEW_COMMENT as newComment,
+        NEW_IMG_URL as newImgUrl,
+        NEW_IS_DISPLAY as newIsDisplay,
+        NEW_STATUS as newStatus,
+        NEW_TAGS as newTags,
+        NEW_KEYWORD as newKeyword,
+        NEW_RECOMM as newRecomm,
+        NEW_TOP as newTop,
+        NEW_CRT_TIME as newCrtTime,
+        NEW_UPT_TIME as newUptTime,
+        OPERATOR as operator
+    </sql>
+    <!--查询所有文章信息-->
+    <select id="selectTnews"  resultType="map" parameterType="com.baomidou.mybatisplus.extension.plugins.pagination.Page">
+        select <include refid="Base_Column_List"/> from T_NEWS WHERE  1=1
+        <if test="newTital != null and newTital != ''">
+            and NEW_TITAL like CONCAT('%',#{newTital},'%')
+        </if>
+        <if test="beginTime != null and beginTime != '' and endTime != null and endTime != ''">
+            and (NEW_CRT_TIME between CONCAT(#{beginTime},' 00:00:00') and CONCAT(#{endTime},' 23:59:59'))
+        </if>
+        ORDER BY NEW_ID DESC
+    </select>
+
+    <!--修改文章-->
+    <update id="editNews" parameterType="cn.stylefeng.guns.business.modular.entity.TNews">
+        update T_NEWS
+        <set>
+            <if test="newTital != null"> NEW_TITAL = #{newTital}, </if>
+            <if test="newContent != null">NEW_CONTENT = #{newContent}, </if>
+            <if test="newAbstracts != null">NEW_ABSTRACTS = #{newAbstracts}, </if>
+            <if test="newType != null">NEW_TYPE = #{newType}, </if>
+            <if test="newCollection != null">NEW_COLLECTION = #{newCollection}, </if>
+            <if test="newAuthor != null">NEW_AUTHOR = #{newAuthor}, </if>
+            <if test="newBrowse != null">NEW_BROWSE = #{newBrowse}, </if>
+            <if test="newComment != null">NEW_COMMENT = #{newComment}, </if>
+            <if test="newImgUrl != null">NEW_IMG_URL = #{newImgUrl}, </if>
+            <if test="newIsDisplay != null">NEW_IS_DISPLAY = #{newIsDisplay}, </if>
+            <if test="newStatus != null">NEW_STATUS = #{newStatus}, </if>
+            <if test="newTags != null">NEW_TAGS = #{newTags}, </if>
+            <if test="newKeyword != null">NEW_KEYWORD = #{newKeyword}, </if>
+            <if test="newRecomm != null">NEW_RECOMM = #{newRecomm}, </if>
+            <if test="newTop != null">NEW_TOP = #{newTop}, </if>
+            <if test="newCrtTime != null">NEW_CRT_TIME = #{newCrtTime}, </if>
+            <if test="newUptTime != null">NEW_UPT_TIME = #{newUptTime}, </if>
+            <if test="operator != null">OPERATOR = #{operator}</if>
+        </set>
+        where NEW_ID = #{newId}
+    </update>
+</mapper>
