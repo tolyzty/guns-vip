@@ -144,11 +144,11 @@ public class ShiroConfig {
         /**
          * 默认的登陆访问url
          */
-        shiroFilter.setLoginUrl("/index.html");
+        shiroFilter.setLoginUrl("/login");
         /**
          * 登陆成功后跳转的url
          */
-        shiroFilter.setSuccessUrl("/admin/");
+        shiroFilter.setSuccessUrl("/");
         /**
          * 没有权限跳转的url
          */
