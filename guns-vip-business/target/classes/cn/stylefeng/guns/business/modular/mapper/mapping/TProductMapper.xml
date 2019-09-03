@@ -44,10 +44,10 @@
         <include refid="Base_Column_List"/>
         from T_PRODUCT where 1 = 1
             <if test="paramCondition.productName != null and paramCondition.productName != ''">
-                and productName like CONCAT('%',#{paramCondition.productName},'%')
+                and PRODUCT_NAME like CONCAT('%',#{paramCondition.productName},'%')
             </if>
             <if test="paramCondition.productCreateTime != null and paramCondition.productCreateTime != ''">
-                and productCreateTime like CONCAT('%',#{paramCondition.productCreateTime},'%')
+                and PRODUCT_CREATE_TIME like CONCAT('%',#{paramCondition.productCreateTime},'%')
             </if>
     </select>
 
@@ -56,10 +56,10 @@
         <include refid="Base_Column_List"/>
         from T_PRODUCT where 1 = 1
             <if test="paramCondition.productName != null and paramCondition.productName != ''">
-                and productName like CONCAT('%',#{paramCondition.productName},'%')
+                and PRODUCT_NAME like CONCAT('%',#{paramCondition.productName},'%')
             </if>
             <if test="paramCondition.productCreateTime != null and paramCondition.productCreateTime != ''">
-                and productCreateTime like CONCAT('%',#{paramCondition.productCreateTime},'%')
+                and PRODUCT_CREATE_TIME like CONCAT('%',#{paramCondition.productCreateTime},'%')
             </if>
     </select>
 
@@ -68,10 +68,10 @@
         <include refid="Base_Column_List"/>
         from T_PRODUCT where 1 = 1
         <if test="paramCondition.productName != null and paramCondition.productName != ''">
-            and productName like CONCAT('%',#{paramCondition.productName},'%')
+            and PRODUCT_NAME like CONCAT('%',#{paramCondition.productName},'%')
         </if>
         <if test="paramCondition.productCreateTime != null and paramCondition.productCreateTime != ''">
-            and productCreateTime like CONCAT('%',#{paramCondition.productCreateTime},'%')
+            and PRODUCT_CREATE_TIME like CONCAT('%',#{paramCondition.productCreateTime},'%')
         </if>
     </select>
 
@@ -80,10 +80,10 @@
         <include refid="Base_Column_List"/>
         from T_PRODUCT where 1 = 1
             <if test="paramCondition.productName != null and paramCondition.productName != ''">
-                and productName like CONCAT('%',#{paramCondition.productName},'%')
+                and PRODUCT_NAME like CONCAT('%',#{paramCondition.productName},'%')
             </if>
             <if test="paramCondition.productCreateTime != null and paramCondition.productCreateTime != ''">
-                and productCreateTime like CONCAT('%',#{paramCondition.productCreateTime},'%')
+                and PRODUCT_CREATE_TIME like CONCAT('%',#{paramCondition.productCreateTime},'%')
             </if>
     </select>
 

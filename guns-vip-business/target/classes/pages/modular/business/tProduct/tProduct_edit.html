@@ -1,179 +1,171 @@
 @layout("/common/_container.html",{bg:"bg-white",js:["/assets/modular/business/tProduct/tProduct_edit.js"]}){
-
-<div class="layui-body-header">
-    <span class="layui-body-header-title">修改</span>
-</div>
-
-<div class="layui-fluid " style="">
-    <div class="layui-card">
-        <div class="layui-card-body">
-            <form id="tProductForm" lay-filter="tProductForm" class="layui-form model-form" style="max-width: 700px;margin: 40px auto;">
-                <input name="id" type="hidden"/>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">产品名称<span style="color: red;">*</span></label>
-                    <div class="layui-input-block">
-                        <input id="productName" name="productName" placeholder="请输入产品名称" type="text" class="layui-input" lay-verify="required" required/>
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">产品类型<span style="color: red;">*</span></label>
-                    <div class="layui-input-block">
-                        <input id="productType" name="productType" placeholder="请输入产品类型" type="text" class="layui-input" lay-verify="required" required/>
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">产品数量<span style="color: red;">*</span></label>
-                    <div class="layui-input-block">
-                        <input id="productNum" name="productNum" placeholder="请输入产品数量" type="text" class="layui-input" lay-verify="required" required/>
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">产品分类<span style="color: red;">*</span></label>
-                    <div class="layui-input-block">
-                        <input id="productClassify" name="productClassify" placeholder="请输入产品分类" type="text" class="layui-input" lay-verify="required" required/>
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">供货价格<span style="color: red;">*</span></label>
-                    <div class="layui-input-block">
-                        <input id="productSupPrice" name="productSupPrice" placeholder="请输入供货价格" type="text" class="layui-input" lay-verify="required" required/>
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">市场价格<span style="color: red;">*</span></label>
-                    <div class="layui-input-block">
-                        <input id="productMarPrice" name="productMarPrice" placeholder="请输入市场价格" type="text" class="layui-input" lay-verify="required" required/>
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">优惠价格<span style="color: red;">*</span></label>
-                    <div class="layui-input-block">
-                        <input id="productPreferPrice" name="productPreferPrice" placeholder="请输入优惠价格" type="text" class="layui-input" lay-verify="required" required/>
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">打折价格<span style="color: red;">*</span></label>
-                    <div class="layui-input-block">
-                        <input id="productDisPrice" name="productDisPrice" placeholder="请输入打折价格" type="text" class="layui-input" lay-verify="required" required/>
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">关键词<span style="color: red;">*</span></label>
-                    <div class="layui-input-block">
-                        <input id="keywordKey" name="keywordKey" placeholder="请输入关键词" type="text" class="layui-input" lay-verify="required" required/>
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">产品图标<span style="color: red;">*</span></label>
-                    <div class="layui-input-block">
-                        <input id="productIcon" name="productIcon" placeholder="请输入产品图标" type="text" class="layui-input" lay-verify="required" required/>
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">库存<span style="color: red;">*</span></label>
-                    <div class="layui-input-block">
-                        <input id="productRepertory" name="productRepertory" placeholder="请输入库存" type="text" class="layui-input" lay-verify="required" required/>
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">销量<span style="color: red;">*</span></label>
-                    <div class="layui-input-block">
-                        <input id="productSales" name="productSales" placeholder="请输入销量" type="text" class="layui-input" lay-verify="required" required/>
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">产品详情<span style="color: red;">*</span></label>
-                    <div class="layui-input-block">
-                        <input id="productDetail" name="productDetail" placeholder="请输入产品详情" type="text" class="layui-input" lay-verify="required" required/>
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">产品配送类型<span style="color: red;">*</span></label>
-                    <div class="layui-input-block">
-                        <input id="productDispatch" name="productDispatch" placeholder="请输入产品配送类型" type="text" class="layui-input" lay-verify="required" required/>
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">产品支付方式<span style="color: red;">*</span></label>
-                    <div class="layui-input-block">
-                        <input id="productPayMethod" name="productPayMethod" placeholder="请输入产品支付方式" type="text" class="layui-input" lay-verify="required" required/>
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">产品特征<span style="color: red;">*</span></label>
-                    <div class="layui-input-block">
-                        <input id="productFeature" name="productFeature" placeholder="请输入产品特征" type="text" class="layui-input" lay-verify="required" required/>
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">产品规格<span style="color: red;">*</span></label>
-                    <div class="layui-input-block">
-                        <input id="productStandard" name="productStandard" placeholder="请输入产品规格" type="text" class="layui-input" lay-verify="required" required/>
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">是否显示<span style="color: red;">*</span></label>
-                    <div class="layui-input-block">
-                        <input id="productIsShow" name="productIsShow" placeholder="请输入是否显示" type="text" class="layui-input" lay-verify="required" required/>
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">产品产地<span style="color: red;">*</span></label>
-                    <div class="layui-input-block">
-                        <input id="productPlace" name="productPlace" placeholder="请输入产品产地" type="text" class="layui-input" lay-verify="required" required/>
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">产品展示类型<span style="color: red;">*</span></label>
-                    <div class="layui-input-block">
-                        <input id="productShowType" name="productShowType" placeholder="请输入产品展示类型" type="text" class="layui-input" lay-verify="required" required/>
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">创建时间<span style="color: red;">*</span></label>
-                    <div class="layui-input-block">
-                        <input id="productCreateTime" name="productCreateTime" placeholder="请输入创建时间" type="text" class="layui-input" lay-verify="required" required/>
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">修改时间<span style="color: red;">*</span></label>
-                    <div class="layui-input-block">
-                        <input id="productUpdateTime" name="productUpdateTime" placeholder="请输入修改时间" type="text" class="layui-input" lay-verify="required" required/>
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">备注<span style="color: red;">*</span></label>
-                    <div class="layui-input-block">
-                        <input id="productRemark" name="productRemark" placeholder="请输入备注" type="text" class="layui-input" lay-verify="required" required/>
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">操作人<span style="color: red;">*</span></label>
-                    <div class="layui-input-block">
-                        <input id="productOperator" name="productOperator" placeholder="请输入操作人" type="text" class="layui-input" lay-verify="required" required/>
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">状态<span style="color: red;">*</span></label>
-                    <div class="layui-input-block">
-                        <input id="productStatus" name="productStatus" placeholder="请输入状态" type="text" class="layui-input" lay-verify="required" required/>
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">是否上架<span style="color: red;">*</span></label>
-                    <div class="layui-input-block">
-                        <input id="productIsPublish" name="productIsPublish" placeholder="请输入是否上架" type="text" class="layui-input" lay-verify="required" required/>
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <div class="layui-input-block">
-                        <button class="layui-btn" lay-filter="btnSubmit" lay-submit>&emsp;提交&emsp;</button>
-                        <button class="layui-btn layui-btn-primary" type="button" id="backupPage">&emsp;返回&emsp;</button>
-                    </div>
-                </div>
-            </form>
+<form id="tProductForm" lay-filter="tProductForm" class="layui-form model-form">
+    <input name="id" type="hidden"/>
+    <div class="layui-form-item">
+        <label class="layui-form-label">产品名称<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+            <input id="productName" name="productName" style="width: 91%;" placeholder="请输入产品名称" type="text" class="layui-input" lay-verify="required" required/>
         </div>
     </div>
-</div>
+
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">产品类型<span style="color: red;">*</span></label>
+            <div class="layui-input-block">
+                <input id="productType" name="productType" placeholder="请输入产品类型" type="text" class="layui-input" lay-verify="required" required/>
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">产品分类<span style="color: red;">*</span></label>
+            <div class="layui-input-block">
+                <input id="productClassify" name="productClassify" placeholder="请输入产品分类" type="text" class="layui-input" lay-verify="required" required/>
+            </div>
+        </div>
+
+        <div class="layui-inline">
+            <label class="layui-form-label">产品展示类型<span style="color: red;">*</span></label>
+            <div class="layui-input-block">
+                <input id="productShowType" name="productShowType" placeholder="请输入产品展示类型" type="text" class="layui-input" lay-verify="required" required/>
+            </div>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+
+        <div class="layui-inline">
+            <label class="layui-form-label">供货价格<span style="color: red;">*</span></label>
+            <div class="layui-input-block">
+                <input id="productSupPrice" name="productSupPrice" placeholder="请输入供货价格" type="number" class="layui-input" lay-verify="required" required/>
+            </div>
+        </div>
+
+        <div class="layui-inline">
+            <label class="layui-form-label">市场价格<span style="color: red;">*</span></label>
+            <div class="layui-input-block">
+                <input id="productMarPrice" name="productMarPrice" placeholder="请输入市场价格" type="number" class="layui-input" lay-verify="required" required/>
+            </div>
+        </div>
+
+        <div class="layui-inline">
+            <label class="layui-form-label">优惠价格<span style="color: red;">*</span></label>
+            <div class="layui-input-block">
+                <input id="productPreferPrice" name="productPreferPrice" placeholder="请输入优惠价格" type="number" class="layui-input" lay-verify="required" required/>
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">打折价格<span style="color: red;">*</span></label>
+            <div class="layui-input-block">
+                <input id="productDisPrice" name="productDisPrice" placeholder="请输入打折价格" type="number" class="layui-input" lay-verify="required" required/>
+            </div>
+        </div>
+
+        <div class="layui-inline">
+            <label class="layui-form-label">产品数量<span style="color: red;">*</span></label>
+            <div class="layui-input-block">
+                <input type="number" id="productNum" placeholder="请输入产品数量"  class="layui-input" lay-verify="required" lay-verify="required" name="productNum" required>
+            </div>
+        </div>
+
+        <div class="layui-inline">
+            <label class="layui-form-label">产品库存<span style="color: red;">*</span></label>
+            <div class="layui-input-block">
+                <input id="productRepertory" name="productRepertory" placeholder="请输入库存" type="number" class="layui-input" lay-verify="required" required/>
+            </div>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">产品图标</label>
+            <div class="layui-input-block">
+                <input id="pictureInputHidden" name="pictureInputHidden" type="hidden" class="layui-input"/>
+                <button type="button" class="layui-btn layui-btn-sm" id="picBtn"><i class="layui-icon"></i>选择图片</button>
+                <div class="layui-upload-list">
+                    <img class="layui-upload-img" id="img1" width="92px" height="92px">
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="layui-form-item">
+
+        <div class="layui-inline">
+            <label class="layui-form-label">销量<span style="color: red;">*</span></label>
+            <div class="layui-input-block">
+                <input id="productSales" name="productSales" placeholder="请输入销量" type="number" class="layui-input" lay-verify="required" required/>
+            </div>
+        </div>
+
+        <div class="layui-inline">
+            <label class="layui-form-label">是否显示<span style="color: red;">*</span></label>
+            <div class="layui-input-block">
+                <input type="checkbox" id="productIsShow" name="productIsShow" title="请输入是否显示" lay-skin="primary" />
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">是否上架<span style="color: red;">*</span></label>
+            <div class="layui-input-block">
+                <input type="checkbox" id="productIsPublish" name="productIsPublish" title="请输入是否上架" lay-skin="primary" />
+            </div>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">产品产地<span style="color: red;">*</span></label>
+            <div class="layui-input-block">
+                <input id="productPlace" name="productPlace" placeholder="请输入产品产地" type="text" class="layui-input" lay-verify="required" required/>
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">产品特征<span style="color: red;">*</span></label>
+            <div class="layui-input-block">
+                <input id="productFeature" name="productFeature" placeholder="请输入产品特征" type="text" class="layui-input" lay-verify="required" required/>
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">产品规格<span style="color: red;">*</span></label>
+            <div class="layui-input-block">
+                <input id="productStandard" name="productStandard" placeholder="请输入产品规格" type="text" class="layui-input" lay-verify="required" required/>
+            </div>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">产品配送类型<span style="color: red;">*</span></label>
+            <div class="layui-input-block">
+                <input id="productDispatch" name="productDispatch" placeholder="请输入产品配送类型" type="text" class="layui-input" lay-verify="required" required/>
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">产品支付方式<span style="color: red;">*</span></label>
+            <div class="layui-input-block">
+                <input id="productPayMethod" name="productPayMethod" placeholder="请输入产品支付方式" type="text" class="layui-input" lay-verify="required" required/>
+            </div>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">产品详情<span style="color: red;"></span></label>
+        <div class="layui-input-block">
+            <div id="productDetail" name="productDetail" style="width: 91%;"></div>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">关键词<span style="color: red;">*</span></label>
+        <div class="layui-input-block" style="width: 80.5%;">
+            <input id="keywordKey" name="keywordKey"  placeholder="请输入关键词" type="text" class="layui-input" lay-verify="required" required/>
+        </div>
+    </div>
+    <div class="layui-form-item text-right" style="width:92%;">
+        <button class="layui-btn layui-btn-primary" type="button" ew-event="closeDialog">取消</button>
+        <button class="layui-btn" lay-filter="btnSubmit" lay-submit>&emsp;提交&emsp;</button>
+    </div>
+</form>
 
 @}

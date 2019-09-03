@@ -41,6 +41,7 @@ import static cn.stylefeng.roses.core.util.HttpContext.getIp;
  * @Date 2017年1月10日 下午8:25:24
  */
 @Controller
+@RequestMapping("/admin")
 public class LoginController extends BaseController {
 
     @Autowired
@@ -80,7 +81,7 @@ public class LoginController extends BaseController {
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login() {
         if (ShiroKit.isAuthenticated() || ShiroKit.getUser() != null) {
-            return REDIRECT + "/";
+            return REDIRECT + "/admin/";
         } else {
             return "/login.html";
         }
@@ -118,7 +119,7 @@ public class LoginController extends BaseController {
 
         ShiroKit.getSession().setAttribute("sessionFlag", true);
 
-        return REDIRECT + "/";
+        return REDIRECT + "/admin/";
     }
 
     /**
@@ -132,6 +133,6 @@ public class LoginController extends BaseController {
         LogManager.me().executeLog(LogTaskFactory.exitLog(ShiroKit.getUserNotNull().getId(), getIp()));
         ShiroKit.getSubject().logout();
         deleteAllCookie();
-        return REDIRECT + "/login";
+        return REDIRECT + "/admin/";
     }
 }

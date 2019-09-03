@@ -54,7 +54,7 @@
 
         <dependency>
             <groupId>cn.stylefeng</groupId>
-            <artifactId>guns-rest-api</artifactId>
+            <artifactId>guns-vip-web</artifactId>
             <version>1.0.0</version>
         </dependency>
     </dependencies>

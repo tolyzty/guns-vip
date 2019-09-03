@@ -27,6 +27,7 @@
         <module>guns-vip-gen</module>
         <module>guns-vip-main</module>
         <module>guns-vip-business</module>
+        <module>guns-vip-web</module>
     </modules>
 
     <properties>
