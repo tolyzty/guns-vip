@@ -15,7 +15,6 @@
  */
 package cn.stylefeng.guns.config.web;
 
-import cn.stylefeng.guns.api.core.aop.RestApiInteceptor;
 import cn.stylefeng.guns.core.attribute.AttributeSetInteceptor;
 import cn.stylefeng.guns.core.constant.Const;
 import cn.stylefeng.guns.core.exception.page.GunsErrorView;
@@ -78,7 +77,6 @@ public class WebConfig implements WebMvcConfigurer {
      */
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new RestApiInteceptor()).addPathPatterns("/gunsApi/**");
         registry.addInterceptor(new AttributeSetInteceptor()).excludePathPatterns(Const.NONE_PERMISSION_RES).addPathPatterns("/**");
     }
 

@@ -89,6 +89,18 @@ public interface IConstantFactory {
      */
     Long getMenuIdByCode(String code);
 
+
+    /**
+     * 获取菜单名称通过编号
+     */
+    String getMenuIndexNameByCode(String code);
+
+    /**
+     * 获取菜单名称通过编号
+     */
+    Long getMenuIndexIdByCode(String code);
+
+
     /**
      * 获取字典名称
      */

@@ -37,7 +37,7 @@ import java.util.*;
 @Slf4j
 public class TNewController extends BaseController {
 
-    private String PREFIX = "/modular/business/news/";
+    private static String PREFIX = "/modular/business/news/";
 
     @Autowired
     private TNewsService tNewsService;

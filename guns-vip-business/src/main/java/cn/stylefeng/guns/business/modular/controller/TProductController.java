@@ -27,7 +27,7 @@ import java.util.Date;
 @RequestMapping("/tProduct")
 public class TProductController extends BaseController {
 
-    private String PREFIX = "/modular/business/tProduct/";
+    private static String PREFIX = "/modular/business/tProduct/";
 
     @Autowired
     private TProductService tProductService;

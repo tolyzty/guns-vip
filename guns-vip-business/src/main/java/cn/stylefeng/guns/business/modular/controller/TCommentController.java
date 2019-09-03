@@ -33,7 +33,7 @@ import java.util.Map;
 @RequestMapping("/comment")
 public class TCommentController extends BaseController {
 
-    private String PREFIX = "/modular/business/comment/";
+    private  static String PREFIX = "/modular/business/comment/";
 
     @Autowired
     private TCommentService tCommentService;

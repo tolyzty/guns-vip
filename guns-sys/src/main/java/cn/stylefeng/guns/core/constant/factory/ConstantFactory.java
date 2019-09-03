@@ -53,6 +53,7 @@ public class ConstantFactory implements IConstantFactory {
     private UserMapper userMapper = SpringContextHolder.getBean(UserMapper.class);
     private MenuMapper menuMapper = SpringContextHolder.getBean(MenuMapper.class);
     private NoticeMapper noticeMapper = SpringContextHolder.getBean(NoticeMapper.class);
+    private TmenuIndexMapper tmenuIndexMapper = SpringContextHolder.getBean(TmenuIndexMapper.class);
 
     public static IConstantFactory me() {
         return SpringContextHolder.getBean("constantFactory");
@@ -213,6 +214,40 @@ public class ConstantFactory implements IConstantFactory {
             menu.setCode(code);
             QueryWrapper<Menu> queryWrapper = new QueryWrapper<>(menu);
             Menu tempMenu = this.menuMapper.selectOne(queryWrapper);
+            return tempMenu.getMenuId();
+        }
+    }
+
+    @Override
+    public String getMenuIndexNameByCode(String code) {
+        if (ToolUtil.isEmpty(code)) {
+            return "";
+        } else if (code.equals("0")) {
+            return "顶级";
+        } else {
+            TmenuIndex param = new TmenuIndex();
+            param.setCode(code);
+            QueryWrapper<TmenuIndex> queryWrapper = new QueryWrapper<>(param);
+            TmenuIndex menu = tmenuIndexMapper.selectOne(queryWrapper);
+            if (menu == null) {
+                return "";
+            } else {
+                return menu.getName();
+            }
+        }
+    }
+
+    @Override
+    public Long getMenuIndexIdByCode(String code) {
+        if (ToolUtil.isEmpty(code)) {
+            return 0L;
+        } else if (code.equals("0")) {
+            return 0L;
+        } else {
+            TmenuIndex menu = new TmenuIndex();
+            menu.setCode(code);
+            QueryWrapper<TmenuIndex> queryWrapper = new QueryWrapper<>(menu);
+            TmenuIndex tempMenu = this.tmenuIndexMapper.selectOne(queryWrapper);
             return tempMenu.getMenuId();
         }
     }

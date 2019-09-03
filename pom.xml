@@ -26,7 +26,6 @@
         <module>guns-sys</module>
         <module>guns-vip-gen</module>
         <module>guns-vip-main</module>
-        <module>guns-rest-api</module>
         <module>guns-vip-business</module>
     </modules>
 

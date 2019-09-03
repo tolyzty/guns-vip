@@ -27,9 +27,7 @@
             <groupId>cn.stylefeng</groupId>
             <artifactId>guns-sys</artifactId>
             <version>1.0.0</version>
-            <scope>compile</scope>
         </dependency>
-
         <!--mp代码生成器-->
        <!-- <dependency>
             <groupId>com.baomidou</groupId>
