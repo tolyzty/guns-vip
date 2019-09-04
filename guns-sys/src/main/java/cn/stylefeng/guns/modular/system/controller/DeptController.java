@@ -25,6 +25,9 @@ import cn.stylefeng.guns.core.constant.dictmap.DeptDict;
 import cn.stylefeng.guns.base.pojo.node.TreeviewNode;
 import cn.stylefeng.guns.base.pojo.node.ZTreeNode;
 import cn.stylefeng.guns.base.pojo.page.LayuiPageFactory;
+import cn.stylefeng.guns.modular.system.entity.Puch;
+import cn.stylefeng.guns.modular.system.entity.PuchName;
+import cn.stylefeng.guns.modular.system.entity.PuchNameVO;
 import cn.stylefeng.guns.modular.system.model.DeptDto;
 import cn.stylefeng.guns.modular.system.service.DeptService;
 import cn.stylefeng.guns.modular.system.warpper.DeptTreeWrapper;
@@ -42,6 +45,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -220,6 +224,69 @@ public class DeptController extends BaseController {
         deptService.deleteDept(deptId);
 
         return SUCCESS_TIP;
+    }
+
+
+    public static void  main(String[] arge){
+        String name = "您与tName老师的课程已经成功完成，订单号: oNo，点击可查看订单详情并评论。";
+        String jname = "tName先生との授業はもう成功しました。注文番号：oNo、クリックして注文書の詳細を確認し、コメントしてください。";
+        String name1="大约还有1小时tName老师就要和你上课啦，请别错过时间，订单号: oNo，点击查看订单详情。";
+        String jname1="あと1時間ぐらいtName先生とあなたの授業があります。時間を逃さないでください。注文番号：oNo、クリックして注文書の詳細を調べてください。";
+        System.out.println("中文消息---> "+name);
+        System.out.println("中文消息1---> "+name1);
+        System.out.println("如果中文消息包含---> 老师的课程已经成功完成，订单号");
+        System.out.println("如果中文消息包含1---> 老师就要和你上课啦，请别错过时间");
+        if(name.contains("老师的课程已经成功完成，订单号")){
+            System.out.println("前台展示日文消息--->"+jname);
+        }
+        if (name1.contains("老师就要和你上课啦，请别错过时间")){
+            System.out.println("前台展示日文消息---> "+jname1);
+        }
+
+        List<Puch> list = new ArrayList<>();
+        Puch puch = new Puch();
+        puch.setContains("老师的课程已经成功完成，订单号");
+        puch.setName(name);
+        puch.setJname(jname);
+        list.add(puch);
+        Puch puch1 = new Puch();
+        puch1.setContains("老师就要和你上课啦，请别错过时间");
+        puch1.setName(name1);
+        puch1.setJname(jname1);
+        list.add(puch1);
+
+        List<PuchName> listName = new ArrayList<>();
+        System.out.println("1."+System.currentTimeMillis());
+        for(int ii=0;ii<20000;ii++){
+            PuchName puchName =new PuchName();
+            puchName.setId(String.valueOf(ii));
+            puchName.setName(name+ii);
+            listName.add(puchName);
+        }
+        //System.out.println("查询原始数据结果Log:  "+listName.size());
+        List<PuchNameVO> listVo = new ArrayList<>();
+        int u=0;
+        for (PuchName p : listName) {
+            u++;
+             //System.out.println(""+u+"  . 原始中文数据： "+p.getName());
+            for (Puch pu: list) {
+                 PuchNameVO vo = new PuchNameVO();
+                if (p.getName().contains(pu.getContains())){
+                    vo.setName(pu.getJname());
+                    listVo.add(vo);
+                    //System.out.println(""+u+"  . 翻译日文数据: "+vo.getName());
+                }
+
+            }
+        }
+        System.out.println("2."+System.currentTimeMillis());
+
+
+
+
+
+
+
     }
 
 }

@@ -144,16 +144,16 @@ public class ShiroConfig {
         /**
          * 默认的登陆访问url
          */
-        shiroFilter.setLoginUrl("/login");
+        shiroFilter.setLoginUrl("/stage/login");
         /**
          * 登陆成功后跳转的url
          */
-        shiroFilter.setSuccessUrl("/");
+        shiroFilter.setSuccessUrl("/stage/");
         /**
          * 没有权限跳转的url
          */
         shiroFilter.setUnauthorizedUrl("/global/error");
-
+        //shiroFilter.setUnauthorizedUrl("/index.html");
         /**
          * 覆盖默认的user拦截器(默认拦截器解决不了ajax请求 session超时的问题,若有更好的办法请及时反馈作者)
          */

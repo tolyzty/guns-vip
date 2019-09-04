@@ -23,4 +23,9 @@ public class IndexController extends BaseController {
              return PREFIX+
                      "/index.html";
         }
+        @RequestMapping("/work.html")
+        public String work(){
+             log.info("跳转到work页面");
+             return  PREFIX+"/work.html";
+        }
 }
