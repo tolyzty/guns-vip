@@ -95,4 +95,10 @@ public interface TmenuIndexMapper extends BaseMapper<TmenuIndex> {
      */
     List<TmenuIndex> getMenusLikePcodes(@Param("code") String code);
 
+    /**
+     * 首页查询全部菜单
+     * @return
+     */
+    List<TmenuIndex> menuList();
+
 }

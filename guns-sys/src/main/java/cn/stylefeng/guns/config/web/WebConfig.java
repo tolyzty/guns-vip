@@ -56,6 +56,7 @@ public class WebConfig implements WebMvcConfigurer {
     @Autowired
     private GunsProperties gunsProperties;
 
+
     /**
      * 静态资源映射
      */
@@ -77,7 +78,7 @@ public class WebConfig implements WebMvcConfigurer {
      */
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new AttributeSetInteceptor()).excludePathPatterns(Const.NONE_PERMISSION_RES).addPathPatterns("/**");
+        //registry.addInterceptor(new AttributeSetInteceptor()).excludePathPatterns(Const.NONE_PERMISSION_RES).addPathPatterns("/**");
     }
 
     /**

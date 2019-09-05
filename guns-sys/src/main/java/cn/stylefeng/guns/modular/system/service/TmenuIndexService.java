@@ -332,4 +332,12 @@ public class TmenuIndexService extends ServiceImpl<TmenuIndexMapper, TmenuIndex>
         return maps;
     }
 
+    /**
+     * 首页的service
+     * @return
+     */
+    public List<TmenuIndex> tmenuIndexList(){
+        return menuMapper.menuList();
+    }
+
 }

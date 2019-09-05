@@ -36,6 +36,6 @@ public class GunsErrorView implements View {
 
     @Override
     public void render(Map<String, ?> map, HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws Exception {
-        httpServletRequest.getRequestDispatcher("/global/error").forward(httpServletRequest, httpServletResponse);
+        httpServletRequest.getRequestDispatcher("/global/errorStr").forward(httpServletRequest, httpServletResponse);
     }
 }

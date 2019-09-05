@@ -52,6 +52,7 @@ public class AttributeSetInteceptor extends HandlerInterceptorAdapter {
         if (user == null) {
             throw new AuthenticationException("当前没有登录账号！");
         } else {
+            System.out.println(DefaultImages.defaultAvatarUrl());
             modelAndView.addObject("name", user.getName());
             modelAndView.addObject("avatar", DefaultImages.defaultAvatarUrl());
             modelAndView.addObject("email", user.getEmail());

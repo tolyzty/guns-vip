@@ -66,6 +66,23 @@
         sys_relation where role_id = #{roleId}
     </select>
 
+    <!--首页查询菜单全部-->
+    <select id="menuList" resultType="cn.stylefeng.guns.modular.system.entity.TmenuIndex">
+       SELECT
+            m1.menu_id AS id,
+            ( CASE WHEN ( m2.menu_id = 0 OR m2.menu_id IS NULL ) THEN 0 ELSE m2.menu_id END ) AS pId,
+            m1.NAME AS NAME,
+            ( CASE WHEN ( m2.menu_id = 0 OR m2.menu_id IS NULL ) THEN 'true' ELSE 'false' END ) AS "open",
+            m1.levels AS levels,
+            m1.url AS url
+        FROM
+            T_MENU_INDEX m1
+            LEFT JOIN T_MENU_INDEX m2 ON m1.pcode = m2.CODE
+        ORDER BY
+            m1.menu_id ASC
+    </select>
+
+
     <select id="menuTreeList" resultType="cn.stylefeng.guns.base.pojo.node.ZTreeNode">
         SELECT
         m1.menu_id AS id,

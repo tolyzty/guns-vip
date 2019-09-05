@@ -49,4 +49,10 @@ public class GlobalController {
         model.addAttribute("tips", "session超时");
         return "/login.html";
     }
+
+    @RequestMapping(path = "/errorStr")
+    public String errorF(){
+        return "/web/404f.html";
+    }
+
 }
