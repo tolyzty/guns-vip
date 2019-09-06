@@ -54,5 +54,23 @@ public class IndexController extends BaseController {
         return PREFIX+"about.html";
     }
 
+    @RequestMapping("/contact.html")
+    public String contact(Model model){
+        log.info("-------contact------");
+        List<TmenuIndex> list = ApplicationRunners.LISTMENU;
+        model.addAttribute("data",list);
+        model.addAttribute("flag","contact.html");
+        return PREFIX+"contact.html";
+    }
+
+    @RequestMapping("/single.html")
+    public String single(Model model){
+        log.info("-------single------");
+        List<TmenuIndex> list = ApplicationRunners.LISTMENU;
+        model.addAttribute("data",list);
+        model.addAttribute("flag","single.html");
+        return PREFIX+"single.html";
+    }
+
 
 }
