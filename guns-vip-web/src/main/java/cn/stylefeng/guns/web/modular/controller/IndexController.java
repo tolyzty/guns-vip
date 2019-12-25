@@ -73,4 +73,9 @@ public class IndexController extends BaseController {
     }
 
 
+    public static void main(String[] arge){
+        System.out.println("测试一个main方法");
+    }
+
+
 }
