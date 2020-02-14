@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/guns-base/guns-base.iml" filepath="$PROJECT_DIR$/guns-base/guns-base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/guns-base-email/guns-base-email.iml" filepath="$PROJECT_DIR$/guns-base-email/guns-base-email.iml" />
+      <module fileurl="file://$PROJECT_DIR$/guns-base-sms/guns-base-sms.iml" filepath="$PROJECT_DIR$/guns-base-sms/guns-base-sms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/guns-sys/guns-sys.iml" filepath="$PROJECT_DIR$/guns-sys/guns-sys.iml" />
+      <module fileurl="file://$PROJECT_DIR$/guns-vip-business/guns-vip-business.iml" filepath="$PROJECT_DIR$/guns-vip-business/guns-vip-business.iml" />
+      <module fileurl="file://$PROJECT_DIR$/guns-vip-gen/guns-vip-gen.iml" filepath="$PROJECT_DIR$/guns-vip-gen/guns-vip-gen.iml" />
+      <module fileurl="file://$PROJECT_DIR$/guns-vip-main/guns-vip-main.iml" filepath="$PROJECT_DIR$/guns-vip-main/guns-vip-main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/guns-vip-web/guns-vip-web.iml" filepath="$PROJECT_DIR$/guns-vip-web/guns-vip-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/gunsVip.iml" filepath="$PROJECT_DIR$/.idea/gunsVip.iml" />
+    </modules>
+  </component>
+</project>

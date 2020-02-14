@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="guns-vip-main:war">
+    <output-path>$PROJECT_DIR$/guns-vip-main/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>guns-vip-main</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="guns-vip-main.war">
+      <element id="artifact" artifact-name="guns-vip-main:war exploded" />
+    </root>
+  </artifact>
+</component>

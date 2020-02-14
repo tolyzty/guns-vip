@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="guns-vip-main" />
+        <module name="guns-base-email" />
+        <module name="guns-vip-gen" />
+        <module name="guns-vip-web" />
+        <module name="guns-vip-business" />
+        <module name="guns-sys" />
+        <module name="guns-base" />
+        <module name="guns-base-sms" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="guns-base" target="1.8" />
+      <module name="guns-base-email" target="1.8" />
+      <module name="guns-base-sms" target="1.8" />
+      <module name="guns-sys" target="1.8" />
+      <module name="guns-vip-business" target="1.8" />
+      <module name="guns-vip-gen" target="1.8" />
+      <module name="guns-vip-main" target="1.8" />
+      <module name="guns-vip-web" target="1.8" />
+      <module name="gunsVip" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="guns-base" options="-parameters" />
+      <module name="guns-base-email" options="-parameters" />
+      <module name="guns-base-sms" options="-parameters" />
+      <module name="guns-sys" options="-parameters" />
+      <module name="guns-vip-business" options="-parameters" />
+      <module name="guns-vip-gen" options="-parameters" />
+      <module name="guns-vip-main" options="-parameters" />
+      <module name="guns-vip-web" options="-parameters" />
+    </option>
+  </component>
+</project>
